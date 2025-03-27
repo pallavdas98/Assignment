@@ -1,0 +1,26 @@
+Steps to Perform the Scan
+Install a Local Kubernetes Cluster
+Choose one of the following lightweight Kubernetes distributions:
+
+Minikube: minikube start
+
+Kind: kind create cluster
+
+K3s: curl -sfL https://get.k3s.io | sh
+
+Install Kubescape (or another scanning tool)
+
+Install Kubescape:
+
+curl -s https://raw.githubusercontent.com/kubescape/kubescape/master/install.sh | /bin/bash
+
+Verify the installation:
+
+kubescape version
+Run the Security Scan
+
+Scan the cluster and output results as JSON:
+kubescape scan --format json --output security_findings.json
+Deliverables
+
+The security_findings.json file will contain all security vulnerabilities and misconfigurations found in the cluster.
